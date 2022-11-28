@@ -8,25 +8,23 @@
 
 using namespace std;
 
-struct listAux{
-    int numElements = 0;
-    list<int> prices;
+struct sequences{
+    int sequenceSize = 1;
+    list<int> seq;
 };
 
 class loja{
     private:
-        listAux **Matrix;
-        int numItens = 0;  //numero de rolos
-        vector<int> materialPrice; //preco do material na ordem recebida
+        int numItens;
+        vector<int> prices; 
+        vector<sequences> mdo; //maximum decreasing order
 
     public:
         loja();
-        void insertPrice(int price);
-        void  setNumItens(int a);
-        void  initilizeMatrix();
-        int OPT(int k,int size);
-        list<int> max(list<int> v);
-        list<int> insere(int index,list<int> v);
+        void setNumItens(int a);
+        void setPriceVector(vector<int> vec);
+        void initializeMDOVector();
+        int OPT();
 };
 
 

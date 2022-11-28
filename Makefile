@@ -29,4 +29,4 @@ distclean: clean
 test: $(EXECUTABLE)
 	bash run_tests.sh
 
-include .depend
+	include .depend

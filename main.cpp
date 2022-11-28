@@ -3,14 +3,16 @@
 #include <string>
 #include <vector>
 #include "loja.hpp"
-
+#include <fstream> //REMOVER REMOVER  R E M O V E R
 int main() {
   
 int numTests;
 int numMaterial;
 int price;
+vector<int> vec;
 loja store;
-
+fstream file; //REMOVER REMOVER  R E M O V E R
+file.open("saida.txt",ios::out); //REMOVER REMOVER  R E M O V E R
 cin >> numTests;
 
 while(numTests > 0){
@@ -18,11 +20,11 @@ while(numTests > 0){
   store.setNumItens(numMaterial);
   for(int i = 0; i < numMaterial; i++){
     cin >> price;
-    store.insertPrice(price);
+    vec.push_back(price);
   }
-  store.initilizeMatrix();
-
-
+  store.setPriceVector(vec);
+  store.initializeMDOVector();
+ file << store.OPT() << endl;
   numTests--;
 }
 
