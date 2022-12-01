@@ -17,14 +17,14 @@ cin >> numTests;
 while(numTests > 0){
   cin >> numMaterial;
   vector<int> vec;
-  store.setNumItens(numMaterial);
+  //store.setNumItens(numMaterial);
   for(int i = 0; i < numMaterial; i++){
     cin >> price;
     vec.push_back(price);
   }
-  store.setPriceVector(vec);
-  store.initializeMDOVector();
-  file << store.OPT() << endl;
+  //store.setPriceVector(vec);
+  //store.initializeMDOVector();
+  //file << store.OPT() << endl;
   numTests--;
 }
 
