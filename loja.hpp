@@ -10,9 +10,18 @@ using namespace std;
 
 class loja{
     private:
+        int numMaterial;
+        vector<int> left;
+        vector<int> right;
+        vector<int> vec_prices;
 
     public:
-    
+        loja();
+        void setVecPrices(vector<int> vec);
+        void setNumMaterial(int n);
+        void initializeLeftAndRight(int numMaterial);
+        int findOptimal();
+        int MAX();
 };
 
 
