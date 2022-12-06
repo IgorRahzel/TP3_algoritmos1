@@ -3,24 +3,27 @@
 #include <string>
 #include <vector>
 #include "loja.hpp"
-#include <fstream> //REMOVER REMOVER  R E M O V E R
+
 int main() {
   
-  int numTests;
-  int numMaterial;
-  int price;
+  int numTests; //numero de casos de teste
+  int numMaterial; //quantidade de rolos
+  int price; // preço dos rolo
+
   loja store;
-  fstream file; //REMOVER REMOVER  R E M O V E R
-  file.open("saida.txt",ios::out); //REMOVER REMOVER  R E M O V E R
+
   cin >> numTests;
 
   while(numTests > 0){
+
     cin >> numMaterial;
-    vector<int> vec;
+
+    vector<int> vec; //armazena os preços de cada rolo
     store.setNumMaterial(numMaterial);
+
     for(int i = 0; i < numMaterial; i++){
       cin >> price;
-      vec.push_back(price);
+      vec.push_back(price); //adiciona preço do rolo no vector vec
     }
     store.setVecPrices(vec);
     store.initializeLeftAndRight(numMaterial);
